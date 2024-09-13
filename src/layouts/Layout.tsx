@@ -49,7 +49,7 @@ const Layout = ({ children }: any) => {
                <div className="bar"></div>
             </div>
             {/* Mobile & Tablet Version For Navbar*/}
-            <div className={`absolute bottom-[-90vh] bg-primaryColor w-full h-[90vh] ${isOpen ? 'left-0' : 'left-[-100%]'} transition-all flex flex-col gap-10 items-center`}>
+            <div className={`absolute z-50 bottom-[-90vh] bg-primaryColor w-full h-[90vh] ${isOpen ? 'left-0' : 'left-[-100%]'} transition-all flex flex-col gap-10 items-center`}>
                <ul className="items-center gap-5 flex flex-col mt-14">
                   {navbarLinks.map(({ id, title, href }) => <li key={id}>
                      <Link href={href} className='text-white text-sm'>{title}</Link>
