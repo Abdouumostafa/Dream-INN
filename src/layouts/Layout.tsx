@@ -86,7 +86,7 @@ const Layout = ({ children }: any) => {
                </ul>
                <ul className="flex items-center gap-5 mt-5 md:text-base text-sm">
                   <Link href={'#rooms'} className='text-white'>{'Rooms'}</Link>
-                  <Link href={'#services'} className='text-white'>{'Services'}</Link>
+                  <Link href={'/services'} className='text-white'>{'Services'}</Link>
                </ul>
             </div>
             <div className='flex flex-col'>

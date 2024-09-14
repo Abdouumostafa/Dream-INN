@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import k from '@/assets/rooms/kingRoom/pic-1.svg'
 import PrimaryButton from './PrimaryButton'
 
 interface IProps {

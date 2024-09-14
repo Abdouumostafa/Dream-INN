@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const RoomsSection = () => {
    return (
-      <div className='my-12'>
+      <div className='my-12' id='rooms'>
          <hr className='bg-[#00000080] h-[2px]' />
          <h2 className='font-semibold text-3xl text-center my-10'>Rooms</h2>
          <div className="grid-container px-[5%]">

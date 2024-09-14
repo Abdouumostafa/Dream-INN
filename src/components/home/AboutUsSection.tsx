@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect } from 'react'
 import aboutUs from '@/assets/home/aboutUs.svg'
-// @ts-ignore
+// @ts-expect-error it is not important
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image';
@@ -13,7 +13,7 @@ const AboutUsSection = () => {
    }, []);
 
    return (
-      <div className='lg:my-28 my-14 px-[5%] flex lg:flex-row flex-col-reverse items-center gap-24'>
+      <div className='lg:my-28 my-14 px-[5%] flex lg:flex-row flex-col-reverse items-center gap-24' id='about'>
          <div className="sm:ml-8 ml-0 flex-1" data-aos="fade-right">
             <h2 className='sm:text-3xl text-2xl font-semibold'>Welcome to Dream Inn</h2>
             <div className="text-[#00000080] sm:text-sm text-xs">

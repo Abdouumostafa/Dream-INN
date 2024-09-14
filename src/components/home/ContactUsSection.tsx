@@ -10,8 +10,10 @@ const ContactUs = () => {
       message: ''
    })
 
+   console.log(formData)
+
    return (
-      <div className='my-24'>
+      <div className='my-24' id='contact-us'>
          <TitleDesc
             title='have a question ?'
             description='Fill the form and we will contact you shortly'
@@ -31,7 +33,7 @@ const ContactUs = () => {
                }}
             />
             <Input
-               type={'tel' || 'email'}
+               type={'text'}
                placeholder='phone / email'
                name='phoneEmail'
                onChange={(text) => {
