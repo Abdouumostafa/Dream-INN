@@ -12,7 +12,7 @@ export const navbarLinks = [
    {
       id: nanoid(),
       title: 'Home',
-      href: '#home'
+      href: '/'
    },
    {
       id: nanoid(),

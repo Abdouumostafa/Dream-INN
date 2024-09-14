@@ -8,7 +8,6 @@ import gmail from '@/assets/gmail.svg'
 import phone from '@/assets/phone.svg'
 import Link from 'next/link'
 import { navbarLinks } from '@/data'
-import { motion } from 'framer-motion'
 import PrimaryButton from '@/components/PrimaryButton'
 
 const Layout = ({ children }: any) => {
@@ -19,14 +18,8 @@ const Layout = ({ children }: any) => {
       document.body.style.overflowY = isOpen ? 'scroll' : 'hidden'
    };
    return (
-      <motion.main
+      <main
          className='flex flex-col min-h-screen box'
-         initial={{ opacity: 0 }}
-         animate={{ opacity: 1 }}
-         transition={{
-            duration: 0.6,
-            delay: 0.5,
-         }}
       >
          {/* Navbar */}
          <nav className='w-full py-4 px-[5%] flex items-center bg-primaryColor relative'>
@@ -81,7 +74,7 @@ const Layout = ({ children }: any) => {
             </div>
             <div>
                <ul className="flex items-center gap-7 md:text-base text-sm">
-                  <Link href={'#home'} className='text-white'>{'Home'}</Link>
+                  <Link href={'/'} className='text-white'>{'Home'}</Link>
                   <Link href={'#contact-us'} className='text-white'>{'Contact Us'}</Link>
                </ul>
                <ul className="flex items-center gap-5 mt-5 md:text-base text-sm">
@@ -103,7 +96,7 @@ const Layout = ({ children }: any) => {
                </div>
             </div>
          </footer>
-      </motion.main>
+      </main>
    )
 }
 
