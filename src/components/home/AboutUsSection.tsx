@@ -13,7 +13,7 @@ const AboutUsSection = () => {
    }, []);
 
    return (
-      <main className='lg:my-28 my-14 px-[5%] flex lg:flex-row flex-col-reverse items-center gap-24'>
+      <div className='lg:my-28 my-14 px-[5%] flex lg:flex-row flex-col-reverse items-center gap-24'>
          <div className="sm:ml-8 ml-0 flex-1" data-aos="fade-right">
             <h2 className='sm:text-3xl text-2xl font-semibold'>Welcome to Dream Inn</h2>
             <div className="text-[#00000080] sm:text-sm text-xs">
@@ -32,7 +32,7 @@ const AboutUsSection = () => {
                <Image src={aboutUs} alt='about us image' className='sm:h-[300px] h-[200px] sm:w-[400px] w-[300px] object-cover absolute sm:-left-5 -left-4 sm:-bottom-5 -bottom-4' />
             </div>
          </div>
-      </main>
+      </div>
    )
 }
 

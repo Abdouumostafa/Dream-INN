@@ -43,3 +43,10 @@ html {
 .burger-icon.open .bar:nth-child(3) {
   transform: rotate(-45deg) translate(4px, -12px);
 }
+
+/* Grid Styling */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 30px;
+}

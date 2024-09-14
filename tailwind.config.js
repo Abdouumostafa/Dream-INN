@@ -11,7 +11,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primaryColor: '#683231'
+        primaryColor: '#683231',
+        lightBlack: '#00000085'
       },
       keyframes: {
         fadeIn: {

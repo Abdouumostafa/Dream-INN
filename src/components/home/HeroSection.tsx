@@ -6,7 +6,7 @@ import heroImg from '@/assets/home/hero.svg'
 
 const HeroSection = () => {
    return (
-      <main className="relative w-[100vw] md:h-[calc(100vh-107px)] h-[calc(100vh-93px)]">
+      <div className="relative w-[100vw] md:h-[calc(100vh-107px)] h-[calc(100vh-93px)]">
          <Image src={heroImg} alt="hero image" className="w-screen h-full object-cover" />
          <div className="absolute z-0 bg-[rgba(0,0,0,0.45)] top-0 left-0 w-full h-full"></div>
          <div className="absolute top-1/2 left-1/2 !-translate-x-1/2 !-translate-y-2/3 text-center">
@@ -37,7 +37,7 @@ const HeroSection = () => {
                   href='/rooms' />
             </motion.div>
          </div>
-      </main>)
+      </div>)
 }
 
 export default HeroSection
