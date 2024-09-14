@@ -16,7 +16,7 @@ const ContactUs = () => {
             title='have a question ?'
             description='Fill the form and we will contact you shortly'
          />
-         <form>
+         <form className='mt-6'>
             <Input
                type='text'
                placeholder='name'

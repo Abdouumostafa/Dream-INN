@@ -12,7 +12,7 @@ const Input = ({ type, placeholder, onChange, name }: IProps) => {
       <div className="text-center">
          <input
             type={type}
-            className='w-1/2 border-b border-b-[#00000045] placeholder:text-[#00000045] placeholder:capitalize focus:outline-none my-2 py-1 pl-1'
+            className='lg:w-1/2 w-[85%] border-b border-b-[#00000045] placeholder:text-[#00000045] placeholder:capitalize focus:outline-none my-2 py-1 pl-1'
             placeholder={placeholder}
             onChange={(e) => onChange?.(e.target.value)}
             required
