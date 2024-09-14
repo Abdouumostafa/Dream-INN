@@ -12,7 +12,7 @@ interface IProps {
 
 const PrimaryRoomCard = ({ roomPhoto, roomType, pricePerNight, roomFeatures }: IProps) => {
    return (
-      <div className='border rounded-md w-full overflow-hidden text-center'>
+      <div className='border rounded-md w-full overflow-hidden text-center shadow-md'>
          <Image src={roomPhoto} alt={'Room Photo'} className='w-full hover:scale-110 hover:rotate-1 transition-all' />
          <div className="px-5 pb-10">
             <h3 className='font-medium mt-8 mb-4 text-2xl'>{roomType}</h3>
