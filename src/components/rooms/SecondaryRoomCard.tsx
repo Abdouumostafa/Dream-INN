@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Bullets from '../Bullets';
-import Link from 'next/link';
 import Input from '../Input';
 
 interface IProps {

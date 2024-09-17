@@ -1,5 +1,5 @@
 "use client"
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 const QueryClientWrapper = ({ children }: any) => {
