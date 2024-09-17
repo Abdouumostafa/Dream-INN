@@ -7,7 +7,7 @@ import React, { useState } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { useRecoilValue } from 'recoil'
 
-const page = () => {
+const Page = () => {
    const queryClient = new QueryClient();
    const [clickedSearch, setClickedSearch] = useState(false)
 
@@ -42,4 +42,4 @@ const page = () => {
    )
 }
 
-export default page
+export default Page

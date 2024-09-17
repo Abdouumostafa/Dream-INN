@@ -8,20 +8,20 @@ import calendar from '@/assets/calendar.svg'
 import guest from '@/assets/guest2.svg'
 import DatePicker from 'react-datepicker';
 import arrowDown from '@/assets/arrowDown.svg'
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { endDateState, numberOfNightsSelector, numberOfNightsState, startDateState } from '@/atoms/nightsNumber.atom';
+import { useRecoilState } from 'recoil';
+import { endDateState, startDateState } from '@/atoms/nightsNumber.atom';
 
 const HeroSection = ({ onSearchClick }: any) => {
    const [startDate, setStartDate] = useRecoilState(startDateState);
    const [endDate, setEndDate] = useRecoilState(endDateState);
-   const setNumberOfNights = useSetRecoilState(numberOfNightsSelector);
-
-   const numberOfNights = useRecoilValue(numberOfNightsSelector);
 
    useEffect(() => {
-      const nights = numberOfNights;
-      setNumberOfNights(nights);
-   }, [startDate, endDate, setNumberOfNights]);
+      const storedStartDate = localStorage.getItem('startDate');
+      const storedEndDate = localStorage.getItem('endDate');
+
+      if (storedStartDate) setStartDate(new Date(storedStartDate));
+      if (storedEndDate) setEndDate(new Date(storedEndDate));
+   }, []);
 
    return (
       <div className="relative w-[100vw] md:h-[calc(100vh-107px)] h-[100vh]" id='home'>
