@@ -12,6 +12,7 @@ import { useRecoilValue } from 'recoil';
 const Page = () => {
    const { id } = useParams()
    const numberOfNights = useRecoilValue(numberOfNightsSelector);
+
    const fetchRooms = async () => {
       const response = await axios.get(`https://dreaminn-backend-production.up.railway.app/rooms?id=${id}`);
       return response.data;
