@@ -4,12 +4,13 @@ import { differenceInDays } from 'date-fns';
 const today: Date = new Date();
 const tomorrow: Date = new Date(today.getTime() + 24 * 60 * 60 * 1000);
 
+// Client-side localStorage access check
 const getStoredStartDate = (): Date => {
    if (typeof window !== 'undefined') {
       const storedStartDate = localStorage.getItem('startDate');
       return storedStartDate ? new Date(storedStartDate) : today;
    }
-   return today;
+   return today; // Fallback for SSR
 };
 
 const getStoredEndDate = (): Date => {
@@ -17,26 +18,30 @@ const getStoredEndDate = (): Date => {
       const storedEndDate = localStorage.getItem('endDate');
       return storedEndDate ? new Date(storedEndDate) : tomorrow;
    }
-   return tomorrow;
+   return tomorrow; // Fallback for SSR
 };
 
-const storedStartDate: Date = getStoredStartDate();
-const storedEndDate: Date = getStoredEndDate();
-const storedNumberOfNights = localStorage.getItem('numberOfNights') ? Number(localStorage.getItem('numberOfNights')) : 1;
+const getStoredNumberOfNights = (): number => {
+   if (typeof window !== 'undefined') {
+      const storedNumberOfNights = localStorage.getItem('numberOfNights');
+      return storedNumberOfNights ? Number(storedNumberOfNights) : 1;
+   }
+   return 1; // Fallback for SSR
+};
 
 export const startDateState = atom({
    key: 'startDateState',
-   default: storedStartDate,
+   default: getStoredStartDate(),
 });
 
 export const endDateState = atom({
    key: 'endDateState',
-   default: storedEndDate,
+   default: getStoredEndDate(),
 });
 
 export const numberOfNightsState = atom({
    key: 'numberOfNightsState',
-   default: storedNumberOfNights,
+   default: getStoredNumberOfNights(),
 });
 
 export const numberOfNightsSelector = selector({
@@ -49,6 +54,8 @@ export const numberOfNightsSelector = selector({
    },
    set: ({ set }, newValue) => {
       set(numberOfNightsState, newValue);
-      localStorage.setItem('numberOfNights', newValue.toString());
+      if (typeof window !== 'undefined') {
+         localStorage.setItem('numberOfNights', newValue.toString());
+      }
    },
 });

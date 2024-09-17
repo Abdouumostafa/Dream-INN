@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import TitleDesc from '../TitleDesc'
 import { useQuery } from 'react-query';

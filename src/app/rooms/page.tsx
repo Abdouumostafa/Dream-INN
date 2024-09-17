@@ -18,6 +18,7 @@ const Page = () => {
       });
    };
 
+
    const numberOfNights = useRecoilValue(numberOfNightsState);
 
    return (
