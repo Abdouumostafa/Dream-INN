@@ -13,10 +13,7 @@ import PrimaryButton from '@/components/PrimaryButton'
 const Layout = ({ children }: any) => {
    const [isOpen, setIsOpen] = useState(false);
 
-   const toggleMenu = () => {
-      setIsOpen(!isOpen);
-      document.body.style.overflowY = isOpen ? 'scroll' : 'hidden'
-   };
+   const toggleMenu = () => setIsOpen(!isOpen);
    return (
       <main
          className='flex flex-col min-h-screen box'

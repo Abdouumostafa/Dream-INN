@@ -24,7 +24,7 @@ const Page = () => {
    return (
       <QueryClientProvider client={queryClient}>
          <Layout>
-            <main>
+            <main className='overflow-y-scroll'>
                <HeroSection
                   onSearchClick={() => {
                      setClickedSearch(true)
