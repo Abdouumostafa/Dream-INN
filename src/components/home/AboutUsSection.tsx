@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect } from 'react'
-import aboutUs from '@/assets/home/aboutUs.svg'
+import aboutUs from '@/assets/home/aboutUs.png'
 // @ts-expect-error it is not important
 import AOS from 'aos';
 import 'aos/dist/aos.css';

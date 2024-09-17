@@ -2,7 +2,7 @@ import React from 'react'
 import PrimaryButton from '../PrimaryButton'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import heroImg from '@/assets/home/hero.svg'
+import heroImg from '@/assets/hero.png'
 
 const HeroSection = () => {
    return (
