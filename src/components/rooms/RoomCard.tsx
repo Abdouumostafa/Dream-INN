@@ -44,7 +44,7 @@ const RoomCard = ({ images, roomType, roomPrice, numberOfNights, numberOfRooms, 
             </div>
          </div>
 
-         <div className="w-full h-10 flex-[45%]">
+         <div className="w-full flex-[45%]">
             <div className="sm:px-5 px-2 pb-10">
                <h3 className='font-medium mt-8 mb-4 text-center text-2xl'>{roomType}</h3>
                <p className='font-medium text-xl flex items-center justify-center gap-1'>${roomPrice} <span className='text-lightBlack text-sm font-light'>/night</span></p>

@@ -22,17 +22,21 @@ const RoomsSection = ({ numberOfNights }: any) => {
                   title='Available Rooms For Your Dates'
                   description='Get the best prices by booking with us directly'
                />
-               {data?.map(({ _id, room_price, room_name, number_of_rooms, pictures }: any) => {
-                  return <RoomCard
-                     key={_id}
-                     images={pictures}
-                     roomType={room_name}
-                     roomPrice={room_price}
-                     numberOfRooms={number_of_rooms}
-                     numberOfNights={numberOfNights}
-                     href={`/rooms/${_id}`}
-                  />;
-               })}
+               {Array.isArray(data) && data.length > 0 ? (
+                  data.map(({ _id, room_price, room_name, number_of_rooms, pictures }) => (
+                     <RoomCard
+                        key={_id}
+                        images={pictures}
+                        roomType={room_name}
+                        roomPrice={room_price}
+                        numberOfRooms={number_of_rooms}
+                        numberOfNights={numberOfNights}
+                        href={`/rooms/${_id}`}
+                     />
+                  ))
+               ) : (
+                  <p>No rooms available</p>
+               )}
             </div>
          }
       </>

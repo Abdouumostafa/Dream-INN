@@ -7,6 +7,7 @@ import RoomsSection from "@/components/home/RoomsSection";
 import Layout from "@/layouts/Layout";
 
 export default function Home() {
+
   return (
     <Layout>
       <main className="overflow-x-hidden">

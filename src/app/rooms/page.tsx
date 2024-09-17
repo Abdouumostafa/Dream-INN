@@ -4,11 +4,9 @@ import HeroSection from '@/components/rooms/HeroSection'
 import RoomsSection from '@/components/rooms/RoomsSection'
 import Layout from '@/layouts/Layout'
 import React, { useState } from 'react'
-import { QueryClient, QueryClientProvider } from 'react-query'
 import { useRecoilValue } from 'recoil'
 
 const Page = () => {
-   const queryClient = new QueryClient();
    const [clickedSearch, setClickedSearch] = useState(false)
 
    const scrollToNextSection = () => {
@@ -22,24 +20,22 @@ const Page = () => {
    const numberOfNights = useRecoilValue(numberOfNightsState);
 
    return (
-      <QueryClientProvider client={queryClient}>
-         <Layout>
-            <main className='overflow-y-scroll'>
-               <HeroSection
-                  onSearchClick={() => {
-                     setClickedSearch(true)
-                     setTimeout(() => { scrollToNextSection() }, 1000)
-                  }}
+      <Layout>
+         <main className='overflow-y-scroll'>
+            <HeroSection
+               onSearchClick={() => {
+                  setClickedSearch(true)
+                  setTimeout(() => { scrollToNextSection() }, 1000)
+               }}
+            />
+            {clickedSearch ?
+               <RoomsSection
+                  numberOfNights={numberOfNights}
                />
-               {clickedSearch ?
-                  <RoomsSection
-                     numberOfNights={numberOfNights}
-                  />
-                  :
-                  ''}
-            </main>
-         </Layout>
-      </QueryClientProvider>
+               :
+               ''}
+         </main>
+      </Layout>
    )
 }
 
