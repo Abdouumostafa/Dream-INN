@@ -14,8 +14,8 @@ import { endDateState, numberOfNightsSelector, startDateState } from '@/atoms/ni
 const HeroSection = ({ onSearchClick }: any) => {
    const [startDate, setStartDate] = useRecoilState(startDateState);
    const [endDate, setEndDate] = useRecoilState(endDateState);
-   const numberOfNights = useRecoilValue(numberOfNightsSelector);
    const setNumberOfNights = useSetRecoilState(numberOfNightsSelector);
+   const numberOfNights = useRecoilValue(numberOfNightsSelector);
 
    useEffect(() => {
       if (typeof window !== 'undefined') {
@@ -29,7 +29,7 @@ const HeroSection = ({ onSearchClick }: any) => {
       <div className="relative w-[100vw] md:h-[calc(100vh-107px)] h-[97vh]" id='home'>
          <Image src={heroImg} alt="hero image" className="w-screen h-full object-cover" />
          <div className="absolute z-0 bg-[rgba(0,0,0,0.45)] top-0 left-0 w-full h-full"></div>
-         <div className="absolute md:top-1/2 top-[60%] left-1/2 !-translate-x-1/2 !-translate-y-2/3 text-center">
+         <div className="absolute top-2/3 left-1/2 !-translate-x-1/2 !-translate-y-2/3 text-center">
             <motion.div
                initial={{ opacity: 0, scale: 0.5 }}
                animate={{ opacity: 1, scale: 1 }}

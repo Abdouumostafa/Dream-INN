@@ -1,13 +1,12 @@
 "use client"
-import { numberOfNightsState } from '@/atoms/nightsNumber.atom'
+import { numberOfNightsSelector } from '@/atoms/nightsNumber.atom'
 import HeroSection from '@/components/rooms/HeroSection'
 import RoomsSection from '@/components/rooms/RoomsSection'
 import Layout from '@/layouts/Layout'
-import React, { useState } from 'react'
+import React from 'react'
 import { useRecoilValue } from 'recoil'
 
 const Page = () => {
-   const [clickedSearch, setClickedSearch] = useState(false)
 
    const scrollToNextSection = () => {
       window.scrollBy({
@@ -16,24 +15,17 @@ const Page = () => {
       });
    };
 
-
-   const numberOfNights = useRecoilValue(numberOfNightsState);
+   const numberOfNights = useRecoilValue(numberOfNightsSelector);
 
    return (
       <Layout>
          <main className='overflow-y-scroll'>
             <HeroSection
-               onSearchClick={() => {
-                  setClickedSearch(true)
-                  setTimeout(() => { scrollToNextSection() }, 1000)
-               }}
+               onSearchClick={() => scrollToNextSection()}
             />
-            {clickedSearch ?
-               <RoomsSection
-                  numberOfNights={numberOfNights}
-               />
-               :
-               ''}
+            <RoomsSection
+               numberOfNights={numberOfNights}
+            />
          </main>
       </Layout>
    )
